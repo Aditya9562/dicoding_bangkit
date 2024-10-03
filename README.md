@@ -77,13 +77,13 @@ Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang di
 ```
 dicoding_bangkit/
 │
-├── dashboard.py                         # File utama untuk analisis dan visualisasi menggunakan Streamlit
-├── Proyek_Analisis_Data.ipynb                    # File untuk analisis dan visualisasi lebih lanjut
+├── dashboard.py                   # File utama untuk analisis dan visualisasi menggunakan Streamlit
+├── Proyek_Analisis_Data.ipynb     # File untuk analisis dan visualisasi lebih lanjut
 ├── README.md                      # File README yang menjelaskan proyek
 ├── requirements.txt               # Daftar dependensi Python yang diperlukan
 └── bike_sharing_dataset/          # Folder yang berisi dataset
-    ├── day.csv                   # Dataset peminjaman sepeda harian
-    └── hour.csv                  # Dataset peminjaman sepeda per jam
+    ├── day.csv                    # Dataset peminjaman sepeda harian
+    └── hour.csv                   # Dataset peminjaman sepeda per jam
 
 ```
 
