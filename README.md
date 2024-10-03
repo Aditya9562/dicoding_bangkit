@@ -75,13 +75,16 @@ Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang di
 
 ## Struktur Direktori
 ```
-proyek_bike_sharing/
+dicoding_bangkit/
 │
-├── app.py                # File utama untuk analisis dan visualisasi
-├── README.md             # File ini
-├── requirements.txt      # Daftar dependensi Python
-├── day.csv               # Dataset peminjaman sepeda harian
-└── hour.csv              # Dataset peminjaman sepeda per jam
+├── dashboard.py                         # File utama untuk analisis dan visualisasi menggunakan Streamlit
+├── analysis.py                    # File untuk analisis dan visualisasi lebih lanjut
+├── README.md                      # File README yang menjelaskan proyek
+├── requirements.txt               # Daftar dependensi Python yang diperlukan
+└── bike_sharing_dataset/          # Folder yang berisi dataset
+    ├── day.csv                   # Dataset peminjaman sepeda harian
+    └── hour.csv                  # Dataset peminjaman sepeda per jam
+
 ```
 
 ## Lisensi
