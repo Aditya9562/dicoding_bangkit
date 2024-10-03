@@ -1,15 +1,13 @@
-Berikut adalah template **README.md** yang sesuai dengan format yang Anda inginkan untuk proyek analisis data Anda:
-
 ```markdown
 # Proyek Analisis Data: Dataset Bike Sharing 🚴‍♂️
 
 Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Python dan visualisasi untuk menjawab beberapa pertanyaan bisnis terkait pola peminjaman sepeda.
 
 ## Detail Proyek
-- **Nama:** [aditya putra afendi]
-- **Email:** [m200b4ky0113@bangkit.academy]
-- **ID Dicoding:** [aditya_putra_afendi_m200b4ky0113_CveJ]
-- **link streamlit:** [https://adityaputra.streamlit.app/]
+- **Nama:** Aditya Putra Afendi
+- **Email:** m200b4ky0113@bangkit.academy
+- **ID Dicoding:** aditya_putra_afendi_m200b4ky0113_CveJ
+- **Link Streamlit:** [https://adityaputra.streamlit.app/](https://adityaputra.streamlit.app/)
 
 ### Pertanyaan Bisnis
 1. Pada jam berapa peminjaman sepeda paling banyak terjadi dalam sehari?
@@ -43,22 +41,29 @@ Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Py
    mkdir proyek_bike_sharing
    cd proyek_bike_sharing
    ```
-2. Inisialisasi virtual environment menggunakan **venv**:
+2. Inisialisasi virtual environment menggunakan venv:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # Unix/macOS
-   venv\Scripts\activate  # Windows
    ```
-3. Install dependencies dari file `requirements.txt`:
+3. Aktifkan virtual environment:
+   - Untuk Unix/macOS:
+     ```bash
+     source venv/bin/activate
+     ```
+   - Untuk Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+4. Install dependencies dari file `requirements.txt`:
    ```bash
    pip install -r requirements.txt
    ```
 
 ## Menjalankan Aplikasi
-Setelah semua dependensi terinstall, Anda bisa menjalankan analisis dengan cara berikut:
+Setelah semua dependensi terinstal, Anda bisa menjalankan analisis dengan cara berikut:
 
 ```bash
-python analysis.py
+streamlit run app.py
 ```
 
 Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang dihasilkan.
@@ -69,22 +74,16 @@ Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang di
 - **Seaborn & Matplotlib**: Untuk visualisasi data.
 
 ## Struktur Direktori
-```plaintext
+```
 proyek_bike_sharing/
 │
-├── analysis.py            # File utama untuk analisis dan visualisasi
-├── README.md              # File ini
-├── requirements.txt       # Daftar dependensi Python
-├── day.csv                # Dataset peminjaman sepeda harian
-└── hour.csv               # Dataset peminjaman sepeda per jam
+├── app.py                # File utama untuk analisis dan visualisasi
+├── README.md             # File ini
+├── requirements.txt      # Daftar dependensi Python
+├── day.csv               # Dataset peminjaman sepeda harian
+└── hour.csv              # Dataset peminjaman sepeda per jam
 ```
 
 ## Lisensi
 Proyek ini tidak memiliki lisensi dan digunakan untuk keperluan edukasi.
-```
 
-### Cara Menggunakan
-1. Ganti placeholder seperti `[Input Nama Anda]`, `[Input Email Anda]`, dan `[Input Username Anda]` dengan informasi yang sesuai.
-2. Sesuaikan bagian lain sesuai kebutuhan dan tambahkan detail lebih lanjut jika perlu.
-
-Simpan konten ini ke dalam file `README.md` dan simpan di direktori proyek Anda.
