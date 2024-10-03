@@ -78,7 +78,7 @@ Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang di
 dicoding_bangkit/
 │
 ├── dashboard.py                         # File utama untuk analisis dan visualisasi menggunakan Streamlit
-├── analysis.py                    # File untuk analisis dan visualisasi lebih lanjut
+├── Proyek_Analisis_Data.ipynb                    # File untuk analisis dan visualisasi lebih lanjut
 ├── README.md                      # File README yang menjelaskan proyek
 ├── requirements.txt               # Daftar dependensi Python yang diperlukan
 └── bike_sharing_dataset/          # Folder yang berisi dataset
