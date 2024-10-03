@@ -9,7 +9,7 @@ Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Py
 - **Nama:** [aditya putra afendi]
 - **Email:** [m200b4ky0113@bangkit.academy]
 - **ID Dicoding:** [aditya_putra_afendi_m200b4ky0113_CveJ]
-- **link streamlit:** [https://dicodingbangkit-ujnfiwa2eoeb9wqtduromw.streamlit.app/]
+- **link streamlit:** [https://adityaputra.streamlit.app/]
 
 ### Pertanyaan Bisnis
 1. Pada jam berapa peminjaman sepeda paling banyak terjadi dalam sehari?
