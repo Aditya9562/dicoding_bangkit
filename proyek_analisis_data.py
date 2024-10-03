@@ -5,13 +5,20 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Set the title of the app
-st.title("Proyek Analisis Data: Bike Sharing")
+st.title("Proyek Analisis Data: Bike Sharing Dataset")
 
 # Display Author Information
 st.write("""
-**Nama:** Aditya Putra Afendi  
-**Email:** m200b4ky0113@bangkit.academy  
-**ID Dicoding:** aditya_putra_afendi_m200b4ky0113_CveJ
+### Nama: **Aditya Putra Afendi**  
+### Email: [m200b4ky0113@bangkit.academy](mailto:m200b4ky0113@bangkit.academy)  
+### ID Dicoding: **aditya_putra_afendi_m200b4ky0113_CveJ**
+""")
+
+# Menentukan Pertanyaan Bisnis
+st.header("Menentukan Pertanyaan Bisnis")
+st.write("""
+- Bagaimana pengaruh cuaca terhadap jumlah peminjaman sepeda harian?  
+- Bagaimana pola peminjaman sepeda pada jam-jam tertentu dalam satu hari?
 """)
 
 # Load datasets from the local Bike-sharing-dataset folder
