@@ -1,79 +1,70 @@
-# app.py
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+# streamlit_app.py
 import streamlit as st
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-# Judul aplikasi
-st.title("Proyek Analisis Data Peminjaman Sepeda")
+# Set the title of the app
+st.title("Proyek Analisis Data: Bike Sharing")
 
-# Menentukan pertanyaan bisnis
-st.header("Pertanyaan Bisnis")
-st.write("""
-- Apa faktor yang paling memengaruhi jumlah peminjaman sepeda harian?
-- Bagaimana pola penggunaan sepeda dipengaruhi oleh musim atau cuaca tertentu?
-""")
+# Load datasets from the local Bike-sharing-dataset folder
+st.header("Load Data")
+day_df = pd.read_csv('Bike-sharing-dataset/day.csv')
+hour_df = pd.read_csv('Bike-sharing-dataset/hour.csv')
 
-# Mengumpulkan data
+# Show the first few rows of the day.csv dataset
+st.subheader("Data Harian")
+st.write(day_df.head())
+
+# Show the first few rows of the hour.csv dataset
+st.subheader("Data Jam")
+st.write(hour_df.head())
+
+# Data Wrangling - converting date columns to datetime format
+st.header("Data Wrangling")
 try:
-    df = pd.read_csv('day.csv')
-    st.write("Data yang dimuat:")
-    st.dataframe(df.head())
-except Exception as e:
-    st.error(f"Error loading data: {e}")
+    day_df['dteday'] = pd.to_datetime(day_df['dteday'])
+    hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
+    st.success("Kolom dteday berhasil diubah menjadi format datetime.")
+except ValueError as e:
+    st.error(f"Error converting 'dteday' to datetime: {e}")
+    st.write("Unique values in 'dteday' column:", hour_df['dteday'].unique())
 
-# Menghitung dan menampilkan informasi dasar tentang dataset
-st.write("Informasi dasar tentang dataset:")
-buffer = df.info()
-st.text(buffer)
+# Exploratory Data Analysis (EDA)
+st.header("Exploratory Data Analysis (EDA)")
 
-# Memeriksa missing values
-missing_values = df.isnull().sum()
-st.write("Jumlah missing values per kolom:")
-st.write(missing_values)
-
-# Descriptive statistics
-st.write("Statistik deskriptif:")
-st.write(df.describe())
-
-# Membersihkan data
-df_cleaned = df.drop(columns=['instant'], errors='ignore')  # Using errors='ignore' to avoid errors if column is not found
-st.write("Data setelah dibersihkan:")
-st.dataframe(df_cleaned.head())
-
-# Visualisasi: Scatter plot antara suhu dan jumlah peminjaman sepeda
-st.subheader("Visualisasi: Suhu vs Jumlah Peminjaman Sepeda")
+# Plotting the distribution of total bike rentals in the daily dataset
+st.subheader("Distribusi Jumlah Peminjaman Sepeda Harian")
 fig, ax = plt.subplots()
-sns.scatterplot(x='temp', y='cnt', data=df_cleaned, ax=ax)
-ax.set_title('Temperature vs Bike Rentals')
-ax.set_xlabel('Temperature')
-ax.set_ylabel('Number of Bike Rentals')
+sns.histplot(day_df['cnt'], kde=True, ax=ax)
+ax.set_title('Distribusi Jumlah Peminjaman Sepeda Harian')
+ax.set_xlabel('Jumlah Peminjaman')
+ax.set_ylabel('Frekuensi')
 st.pyplot(fig)
 
-# Korelasi antara fitur
-st.subheader("Korelasi Antara Fitur")
-df_numeric = df_cleaned.select_dtypes(include=[np.number])
-plt.figure(figsize=(10, 6))
-sns.heatmap(df_numeric.corr(), annot=True, cmap='coolwarm')
-plt.title('Correlation Between Features')
-st.pyplot(plt)
+# Analyzing the effect of weather on daily bike rentals
+st.subheader("Pengaruh Cuaca terhadap Jumlah Peminjaman Sepeda Harian")
+fig, ax = plt.subplots()
+sns.boxplot(x='weathersit', y='cnt', data=day_df, ax=ax)
+ax.set_title('Pengaruh Cuaca terhadap Jumlah Peminjaman Sepeda Harian')
+ax.set_xlabel('Kondisi Cuaca')
+ax.set_ylabel('Jumlah Peminjaman')
+st.pyplot(fig)
 
-# Visualisasi: Boxplot untuk musim
-st.subheader("Visualisasi: Peminjaman Sepeda berdasarkan Musim")
-fig2, ax2 = plt.subplots()
-sns.boxplot(x='season', y='cnt', data=df_cleaned, ax=ax2)
-ax2.set_title('Bike Rentals Across Seasons')
-ax2.set_xlabel('Season')
-ax2.set_ylabel('Number of Bike Rentals')
-st.pyplot(fig2)
+# Analyzing hourly rental patterns
+st.subheader("Pola Peminjaman Sepeda pada Berbagai Jam dalam Sehari")
+hourly_avg = hour_df.groupby('hr').mean(numeric_only=True).reset_index()
 
-# Kesimpulan
-st.header("Kesimpulan")
-conclusion_text = """
-- Jumlah peminjaman sepeda total (cnt) sangat berkorelasi positif dengan pengguna terdaftar (0.95) dan suhu (0.63).
-- Terdapat korelasi positif sedang antara peminjaman dengan musim (0.41) dan tahun (0.57).
-- Kecepatan angin (-0.23) dan kelembaban (-0.1) berkorelasi negatif dengan jumlah peminjaman.
-- Jumlah peminjaman sepeda lebih tinggi di musim 2 dan 3, sementara peminjaman lebih sedikit di musim 1 dan 4.
-"""
-st.write(conclusion_text)
+fig, ax = plt.subplots()
+sns.lineplot(x='hr', y='cnt', data=hourly_avg, ax=ax)
+ax.set_title('Pola Peminjaman Sepeda pada Berbagai Jam dalam Sehari')
+ax.set_xlabel('Jam')
+ax.set_ylabel('Rata-rata Jumlah Peminjaman')
+st.pyplot(fig)
+
+# Conclusion
+st.header("Conclusion")
+st.write("""
+- **Pengaruh Cuaca:** Kondisi cuaca sangat mempengaruhi jumlah peminjaman sepeda. Cuaca cerah meningkatkan peminjaman, sedangkan cuaca buruk menurunkannya.
+- **Pola Jam Sibuk:** Peminjaman sepeda meningkat pada jam-jam sibuk seperti pagi dan sore hari, menunjukkan penggunaan untuk perjalanan kerja atau sekolah.
+""")
