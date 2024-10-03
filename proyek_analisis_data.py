@@ -16,9 +16,12 @@ st.write("""
 """)
 
 # Mengumpulkan data
-df = pd.read_csv('day.csv')
-st.write("Data yang dimuat:")
-st.dataframe(df.head())
+try:
+    df = pd.read_csv('day.csv')
+    st.write("Data yang dimuat:")
+    st.dataframe(df.head())
+except Exception as e:
+    st.error(f"Error loading data: {e}")
 
 # Menghitung dan menampilkan informasi dasar tentang dataset
 st.write("Informasi dasar tentang dataset:")
@@ -35,7 +38,7 @@ st.write("Statistik deskriptif:")
 st.write(df.describe())
 
 # Membersihkan data
-df_cleaned = df.drop(columns=['instant'])
+df_cleaned = df.drop(columns=['instant'], errors='ignore')  # Using errors='ignore' to avoid errors if column is not found
 st.write("Data setelah dibersihkan:")
 st.dataframe(df_cleaned.head())
 
