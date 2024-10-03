@@ -6,9 +6,10 @@ Berikut adalah template **README.md** yang sesuai dengan format yang Anda ingink
 Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Python dan visualisasi untuk menjawab beberapa pertanyaan bisnis terkait pola peminjaman sepeda.
 
 ## Detail Proyek
-- **Nama:** [Input Nama Anda]
-- **Email:** [Input Email Anda]
-- **ID Dicoding:** [Input Username Anda]
+- **Nama:** [aditya putra afendi]
+- **Email:** [m200b4ky0113@bangkit.academy]
+- **ID Dicoding:** [aditya_putra_afendi_m200b4ky0113_CveJ]
+- **link streamlit:** [https://dicodingbangkit-ujnfiwa2eoeb9wqtduromw.streamlit.app/]
 
 ### Pertanyaan Bisnis
 1. Pada jam berapa peminjaman sepeda paling banyak terjadi dalam sehari?
