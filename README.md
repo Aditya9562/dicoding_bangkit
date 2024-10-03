@@ -1,4 +1,4 @@
-```markdown
+
 # Proyek Analisis Data: Dataset Bike Sharing 🚴‍♂️
 
 Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Python dan visualisasi untuk menjawab beberapa pertanyaan bisnis terkait pola peminjaman sepeda.
