@@ -65,7 +65,7 @@ Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Py
 Setelah semua dependensi terinstal, Anda bisa menjalankan analisis dengan cara berikut:
 
 ```bash
-streamlit run app.py
+streamlit run dashboard.py
 ```
 
 Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang dihasilkan.
@@ -80,7 +80,7 @@ Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang di
 ```
 dicoding_bangkit/
 │
-├── app.py                        # File utama untuk analisis dan visualisasi menggunakan Streamlit
+├── dashboard.py                   # File utama untuk analisis dan visualisasi menggunakan Streamlit
 ├── Proyek_Analisis_Data.ipynb     # File untuk analisis dan visualisasi lebih lanjut
 ├── README.md                      # File README yang menjelaskan proyek
 ├── requirements.txt               # Daftar dependensi Python yang diperlukan
