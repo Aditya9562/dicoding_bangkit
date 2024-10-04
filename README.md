@@ -1,4 +1,6 @@
 
+---
+
 # Proyek Analisis Data: Dataset Bike Sharing 🚴‍♂️
 
 Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Python dan visualisasi untuk menjawab beberapa pertanyaan bisnis terkait pola peminjaman sepeda.
@@ -14,10 +16,10 @@ Proyek ini bertujuan untuk menganalisis dataset peminjaman sepeda menggunakan Py
 2. Apakah terdapat perbedaan pola peminjaman antara hari kerja dan akhir pekan?
 
 ## Fitur Utama
-- **Visualisasi Pola Peminjaman Sepeda Berdasarkan Jam**: Menggunakan *line plot* untuk menunjukkan rata-rata peminjaman sepeda per jam.
-- **Analisis Peminjaman Berdasarkan Hari Kerja vs. Akhir Pekan**: Menggunakan *bar plot* untuk menganalisis peminjaman sepeda berdasarkan status hari (kerja atau akhir pekan).
-- **Pembersihan Data**: Deteksi dan penghapusan nilai duplikat dan nilai yang hilang dari dataset.
-- **Eksplorasi Data Lanjutan**: Visualisasi korelasi antar variabel menggunakan *heatmap*.
+- **Visualisasi Pola Peminjaman Sepeda Berdasarkan Jam**: Menggunakan *line plot* untuk menunjukkan rata-rata peminjaman sepeda per jam. Hasil visualisasi menunjukkan tren tertentu, seperti jam sibuk pada pagi hari dan sore hari.
+- **Analisis Peminjaman Berdasarkan Hari Kerja vs. Akhir Pekan**: Menggunakan *bar plot* untuk menganalisis peminjaman sepeda berdasarkan status hari (kerja atau akhir pekan). Anda akan melihat perbedaan signifikan antara pola peminjaman di hari kerja dan akhir pekan.
+- **Pembersihan Data**: Deteksi dan penghapusan nilai duplikat serta nilai yang hilang dari dataset.
+- **Eksplorasi Data Lanjutan**: Visualisasi korelasi antar variabel menggunakan *heatmap* untuk melihat hubungan antar faktor yang mempengaruhi peminjaman sepeda.
 
 ## Setup Environment
 
@@ -72,12 +74,13 @@ Hasil visualisasi akan ditampilkan pada jendela output atau dalam grafik yang di
 - **Python**: Bahasa pemrograman utama.
 - **Pandas**: Untuk manipulasi dan analisis data.
 - **Seaborn & Matplotlib**: Untuk visualisasi data.
+- **Streamlit**: Untuk membangun dashboard interaktif.
 
 ## Struktur Direktori
 ```
 dicoding_bangkit/
 │
-├── dashboard.py                   # File utama untuk analisis dan visualisasi menggunakan Streamlit
+├── app.py                        # File utama untuk analisis dan visualisasi menggunakan Streamlit
 ├── Proyek_Analisis_Data.ipynb     # File untuk analisis dan visualisasi lebih lanjut
 ├── README.md                      # File README yang menjelaskan proyek
 ├── requirements.txt               # Daftar dependensi Python yang diperlukan
@@ -90,3 +93,4 @@ dicoding_bangkit/
 ## Lisensi
 Proyek ini tidak memiliki lisensi dan digunakan untuk keperluan edukasi.
 
+---
